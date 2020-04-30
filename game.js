@@ -219,6 +219,8 @@ function checkWin() {
             flagLose++;
         }
     }
+    console.log("Have " + flagWin + " XX!");
+    console.log("Have " + flagLose + " GOOD SOIL!");
 
     if (flagWin == 0) {
         alert("You Win!");
@@ -229,3 +231,4 @@ function checkWin() {
 
 createButtons();
 createBlock();
+checkWin();
