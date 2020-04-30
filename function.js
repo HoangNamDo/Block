@@ -28,6 +28,17 @@ function checkAllText(TEXT) {
     return count;
 }
 
+function tutor() {
+    console.clear();
+    if (count == 4) {
+        console.log("Choose 1 of 5!");
+        console.log("Two similar units are combined to a higher level unit!\nThe highest lever of unit is: LEVEL 4!");
+        console.log("The U units (or UP UNITs) will destroy (X) block(s) above it!\n(X is equal to the number of levels)\nThe other units like:\n D units (DOWN UNITs)\n R units (RIGHT UNITs)\n L units (LEFT UNITs)\nare the similar effect only in different direction!\nWhen the unit is at highest level, you can choose it again to use its effect!");
+    } else {
+        console.log("Have " + (4 - count) + "/5 left!");
+    }   
+}
+
 function U2(ID) {
     if (ID >= 20) {
         document.getElementById(ID - 10).innerText = "";
