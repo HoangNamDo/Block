@@ -20,7 +20,7 @@ function createButtons() {
             button.innerText = "";
 
             button.onclick = function () {
-
+                checkWin();
                 var ID = parseInt(this.id);
                 if (this.innerText != "XX") {
                     if (this.innerText != "" && count == 0) {
@@ -234,4 +234,3 @@ console.log("Choose any one to start!");
 
 createButtons();
 createBlock();
-checkWin();
