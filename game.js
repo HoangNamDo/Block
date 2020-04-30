@@ -87,12 +87,13 @@ function createButtons() {
                             }
                         }
                     }
-                    if (this.innerText == "" && count < 5) {
+                    if (this.innerText == "" && count < 5) {                        
                         var unit = unitList[Math.floor((Math.random() * unitList.length) + 0)];
                         unitCombine.push(unit);
                         unitId.push(this.id);
                         this.innerText = unit;
                         this.className = "button select";
+                        tutor();
                         count++;
                     }
                     else if (count == 5) {
@@ -219,15 +220,17 @@ function checkWin() {
             flagLose++;
         }
     }
-    console.log("Have " + flagWin + " XX!");
-    console.log("Have " + flagLose + " GOOD SOIL!");
 
     if (flagWin == 0) {
         alert("You Win!");
-    } else if (flagLose == 0) {
+    } else if (flagLose == 0 || (flagLose < 5 && count <5)) {
         alert("You Lose!");
+        location.reload();
     }
 }
+
+console.log("Win condition of this game is: HAVE NO XX BLOCKS!\nLet's destroy it!");
+console.log("Choose any one to start!");
 
 createButtons();
 createBlock();
