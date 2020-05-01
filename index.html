@@ -16,7 +16,6 @@
             padding: 14px 10px;
             margin: 5px;
             text-align: center;
-            cursor: pointer;
             outline: none;
             border-radius: 15px;
             box-shadow: 0 9px #999;
@@ -26,6 +25,11 @@
         .button:hover {
             background-color: #000;
             color: white;
+        }
+
+        @keyframes fade {
+            0%   {background: #fff;}
+            100% {background: #000;}
         }
 
         .button:active {
@@ -141,44 +145,11 @@
             border: 2px solid #00ff00;
         }
 
-        .unitA1 {
-            color: #000;
-            border: 2px solid #ff0000;
-        }
-
-        .unitA2 {
-            background-color: rgba(255, 0, 0, 0.2);
-            color: #000;
-        }
-
         .lock {
             background-color: #000;
             color: #fff;
             border: 2px solid #e7e7e7;
-        }
-
-        #navbar {
-            background-color: #333;
-            position: fixed;
-            top: -200px;
-            width: 100%;
-            display: block;
-            transition: top 1s;
-        }
-
-        #navbar h2 {
-            float: left;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 15px;
-            text-decoration: none;
-            font-size: 50px;
-        }
-
-        #navbar h2:hover {
-            background-color: #ddd;
-            color: black;
+            animation: fade 1.5s;
         }
     </style>
 </head>
@@ -186,9 +157,6 @@
 <body>
     <script src="game.js"></script>
     <script src="function.js"></script>
-    <div id="navbar">
-        <h2>Combine to A2</h2>
-    </div>
 </body>
 
 </html>
