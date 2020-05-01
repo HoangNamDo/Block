@@ -159,7 +159,7 @@ function createButtons() {
                             L2(ID);
                         } else if (TEXT == "L1") {
                             this.className = "button L1";
-                            if ((ID - 1) % 10 != 0 && (ID - 1) >= 0) {
+                            if (ID % 10 != 0) {
                                 document.getElementById(ID - 1).innerText = "";
                                 document.getElementById(ID - 1).className = "button none";
                             }
