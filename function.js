@@ -217,38 +217,38 @@ function R4(ID) {
 }
 
 function L2(ID) {
-    if ((ID - 2) % 10 != 0 && (ID - 2) >= 0) {
+    if ((ID - 1) % 10 != 0 && (ID - 2) >= 0) {
         document.getElementById(ID - 1).innerText = "";
         document.getElementById(ID - 1).className = "button none";
         document.getElementById(ID - 2).innerText = "";
         document.getElementById(ID - 2).className = "button none";
-    } else if ((ID - 1) % 10 != 0 && (ID - 1) >= 0) {
+    } else if (ID % 10 != 0) {
         document.getElementById(ID - 1).innerText = "";
         document.getElementById(ID - 1).className = "button none";
     }
 }
 
 function L3(ID) {
-    if ((ID - 3) % 10 != 0 && (ID - 3) >= 0) {
+    if ((ID - 2) % 10 != 0 && (ID - 3) >= 0) {
         document.getElementById(ID - 1).innerText = "";
         document.getElementById(ID - 1).className = "button none";
         document.getElementById(ID - 2).innerText = "";
         document.getElementById(ID - 2).className = "button none";
         document.getElementById(ID - 3).innerText = "";
         document.getElementById(ID - 3).className = "button none";
-    } else if ((ID - 2) % 10 != 0 && (ID - 2) >= 0) {
+    } else if ((ID - 1) % 10 != 0 && (ID - 2) >= 0) {
         document.getElementById(ID - 1).innerText = "";
         document.getElementById(ID - 1).className = "button none";
         document.getElementById(ID - 2).innerText = "";
         document.getElementById(ID - 2).className = "button none";
-    } else if ((ID - 1) % 10 != 0 && (ID - 1) >= 0) {
+    } else if (ID % 10 != 0) {
         document.getElementById(ID - 1).innerText = "";
         document.getElementById(ID - 1).className = "button none";
     }
 }
 
 function L4(ID) {
-    if ((ID - 4) % 10 != 0 && (ID - 4) >= 0) {
+    if ((ID - 3) % 10 != 0 && (ID - 4) >= 0) {
         document.getElementById(ID - 1).innerText = "";
         document.getElementById(ID - 1).className = "button none";
         document.getElementById(ID - 2).innerText = "";
@@ -257,19 +257,19 @@ function L4(ID) {
         document.getElementById(ID - 3).className = "button none";
         document.getElementById(ID - 4).innerText = "";
         document.getElementById(ID - 4).className = "button none";
-    } else if ((ID - 3) % 10 != 0 && (ID - 3) >= 0) {
+    } else if ((ID - 2) % 10 != 0 && (ID - 3) >= 0) {
         document.getElementById(ID - 1).innerText = "";
         document.getElementById(ID - 1).className = "button none";
         document.getElementById(ID - 2).innerText = "";
         document.getElementById(ID - 2).className = "button none";
         document.getElementById(ID - 3).innerText = "";
         document.getElementById(ID - 3).className = "button none";
-    } else if ((ID - 2) % 10 != 0 && (ID - 2) >= 0) {
+    } else if ((ID - 1) % 10 != 0 && (ID - 2) >= 0) {
         document.getElementById(ID - 1).innerText = "";
         document.getElementById(ID - 1).className = "button none";
         document.getElementById(ID - 2).innerText = "";
         document.getElementById(ID - 2).className = "button none";
-    } else if ((ID - 1) % 10 != 0 && (ID - 1) >= 0) {
+    } else if (ID % 10 != 0) {
         document.getElementById(ID - 1).innerText = "";
         document.getElementById(ID - 1).className = "button none";
     }
