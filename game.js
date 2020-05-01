@@ -153,10 +153,10 @@ function createButtons() {
                             L1(ID);
                         }
 
-                        reset();
-                        checkWin();
+                        reset();                       
                     }
                 }
+                checkWin();
             };
 
             document.body.appendChild(button);
@@ -211,6 +211,7 @@ function checkWin() {
 
     if (flagWin == 0) {
         alert("You Win!");
+        location.reload();
     } else if (flagLose == 0 || (flagLose < 5 && count < 5)) {
         alert("You Lose!");
         location.reload();
