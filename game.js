@@ -87,7 +87,7 @@ function createButtons() {
                             }
                         }
                     }
-                    if (this.innerText == "" && count < 5) {                        
+                    if (this.innerText == "" && count < 5) {
                         var unit = unitList[Math.floor((Math.random() * unitList.length) + 0)];
                         unitCombine.push(unit);
                         unitId.push(this.id);
@@ -111,10 +111,7 @@ function createButtons() {
                             U2(ID);
                         } else if (TEXT == "U1") {
                             this.className = "button U1";
-                            if (ID >= 10) {
-                                document.getElementById(ID - 10).innerText = "";
-                                document.getElementById(ID - 10).className = "button none";
-                            }
+                            U1(ID);
                         }
 
                         if (TEXT == "D1" && checkText(TEXT) >= 4) {
@@ -127,10 +124,7 @@ function createButtons() {
                             D2(ID);
                         } else if (TEXT == "D1") {
                             this.className = "button D1";
-                            if (ID <= 89) {
-                                document.getElementById(ID + 10).innerText = "";
-                                document.getElementById(ID + 10).className = "button none";
-                            }
+                            D1(ID);
                         }
 
                         if (TEXT == "R1" && checkText(TEXT) >= 4) {
@@ -143,10 +137,7 @@ function createButtons() {
                             R2(ID);
                         } else if (TEXT == "R1") {
                             this.className = "button R1";
-                            if ((ID + 1) % 10 != 0 && (ID + 1) < 100) {
-                                document.getElementById(ID + 1).innerText = "";
-                                document.getElementById(ID + 1).className = "button none";
-                            }
+                            R1(ID);
                         }
 
                         if (TEXT == "L1" && checkText(TEXT) >= 4) {
@@ -159,10 +150,7 @@ function createButtons() {
                             L2(ID);
                         } else if (TEXT == "L1") {
                             this.className = "button L1";
-                            if (ID % 10 != 0) {
-                                document.getElementById(ID - 1).innerText = "";
-                                document.getElementById(ID - 1).className = "button none";
-                            }
+                            L1(ID);
                         }
 
                         reset();
@@ -223,7 +211,7 @@ function checkWin() {
 
     if (flagWin == 0) {
         alert("You Win!");
-    } else if (flagLose == 0 || (flagLose < 5 && count <5)) {
+    } else if (flagLose == 0 || (flagLose < 5 && count < 5)) {
         alert("You Lose!");
         location.reload();
     }
