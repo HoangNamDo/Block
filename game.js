@@ -153,7 +153,7 @@ function createButtons() {
                             L1(ID);
                         }
 
-                        reset();                       
+                        reset();
                     }
                 }
                 checkWin();
@@ -210,7 +210,7 @@ function checkWin() {
     }
 
     if (flagWin == 0) {
-        alert("You Win!");
+        alert("You Win!\n" + document.getElementById("timer").innerText);
         location.reload();
     } else if (flagLose == 0 || (flagLose < 5 && count < 5)) {
         alert("You Lose!");
@@ -218,8 +218,40 @@ function checkWin() {
     }
 }
 
-console.log("Win condition of this game is: HAVE NO XX BLOCKS!\nLet's destroy it!");
-console.log("Choose any one to start!");
+function timer() {
+    var s = 0;
+    var m = 0;
+    var h = 0;
+    var id = document.getElementById("timer");
+    id.innerText = "Time: 00:00:00";
+    setInterval(function () {
+        s++;
+        if (s >= 60) {
+            s = 0;
+            m++;
+        }
+        if (m >= 60) {
+            m = 0;
+            h++;
+        }
 
-createButtons();
-createBlock();
+        if (s < 10 && m < 10 && h < 10) {
+            id.innerText = "Time: 0" + h + ":0" + m + ":0" + s;
+        } else if (m < 10 && h < 10) {
+            id.innerText = "Time: 0" + h + ":0" + m + ":" + s;
+        } else if (h < 10) {
+            id.innerText = "Time: 0" + h + ":" + m + ":" + s;
+        } else {
+            id.innerText = "Time: " + h + ":" + m + ":" + s;
+        }
+    }, 1000);
+}
+
+function start() {
+    document.getElementById("startBtn").remove();
+    timer();
+    createButtons();
+    createBlock();
+    console.log("Win condition of this game is: HAVE NO XX BLOCKS!\nLet's destroy it!");
+    console.log("Choose any one to start!");
+}
