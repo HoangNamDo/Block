@@ -1,3 +1,6 @@
+// var canvas = document.getElementById('canvas');
+// var context = canvas.getContext("2d");
+
 var unitList = ["U1", "R1", "D1", "L1"];
 var unitCombine = [];
 var unitId = [];
