@@ -1,6 +1,3 @@
-// var canvas = document.getElementById('canvas');
-// var context = canvas.getContext("2d");
-
 var unitList = ["U1", "R1", "D1", "L1"];
 var unitCombine = [];
 var unitId = [];
@@ -21,7 +18,6 @@ function createButtons() {
             button.id = 10 * i + j;
             button.className = "button none";
             button.innerText = "";
-
             button.onclick = function () {
                 checkWin();
                 var ID = parseInt(this.id);
@@ -29,6 +25,7 @@ function createButtons() {
                     if (this.innerText != "" && count == 0) {
                         unitCombineId = [];
                         if (this.innerText.substr(1, 1) == 4) {
+                            document.getElementById("Effect").play();
                             if (this.innerText == "U4") {
                                 U4(ID);
                             } else if (this.innerText == "D4") {
@@ -40,6 +37,7 @@ function createButtons() {
                             }
                         } else if (this.innerText.substr(1, 1) < 4) {
                             if (checkAllText(this.innerText) >= 4 && this.innerText.substr(1, 1) < 3) {
+                                document.getElementById("Effect").play();
                                 this.innerText = this.innerText.substr(0, 1) + (parseInt(this.innerText.substr(1, 1)) + 2);
                                 this.className = "button " + this.innerText;
                                 if (this.innerText == "U4") {
@@ -60,6 +58,7 @@ function createButtons() {
                                     L3(ID);
                                 }
                             } else if (checkAllText(this.innerText) >= 2) {
+                                document.getElementById("Effect").play();
                                 this.innerText = this.innerText.substr(0, 1) + (parseInt(this.innerText.substr(1, 1)) + 1);
                                 this.className = "button " + this.innerText;
                                 if (this.innerText == "U4") {
@@ -98,9 +97,11 @@ function createButtons() {
                         this.className = "button select";
                         tutor();
                         count++;
+                        document.getElementById("Select").play();
                     }
                     else if (count == 5) {
                         var TEXT = this.innerText;
+                        document.getElementById("Choose").play();
 
                         checkId(this.id);
 
@@ -158,6 +159,8 @@ function createButtons() {
 
                         reset();
                     }
+                } else {
+                    document.getElementById("Cant").play();
                 }
                 checkWin();
             };
@@ -213,18 +216,20 @@ function checkWin() {
     }
 
     if (flagWin == 0) {
+        document.getElementById("Win").play();
         alert("You Win!\n" + document.getElementById("timer").innerText);
         location.reload();
     } else if (flagLose == 0 || (flagLose < 5 && count < 5)) {
+        document.getElementById("Lose").play();
         alert("You Lose!");
         location.reload();
     }
 }
 
 function timer() {
-    var s = 0;
-    var m = 0;
-    var h = 0;
+    var s = 0; sText = "";
+    var m = 0; mText = "";
+    var h = 0; hText = "";
     var id = document.getElementById("timer");
     id.innerText = "Time: 00:00:00";
     setInterval(function () {
@@ -238,19 +243,30 @@ function timer() {
             h++;
         }
 
-        if (s < 10 && m < 10 && h < 10) {
-            id.innerText = "Time: 0" + h + ":0" + m + ":0" + s;
-        } else if (m < 10 && h < 10) {
-            id.innerText = "Time: 0" + h + ":0" + m + ":" + s;
-        } else if (h < 10) {
-            id.innerText = "Time: 0" + h + ":" + m + ":" + s;
+        if (s < 10) {
+            sText = ":0" + s;
         } else {
-            id.innerText = "Time: " + h + ":" + m + ":" + s;
+            sText = ":" + s;
         }
+
+        if (m < 10) {
+            mText = ":0" + m;
+        } else {
+            mText = ":" + m;
+        }
+
+        if (h < 10) {
+            hText = "0" + h;
+        } else {
+            hText = h;
+        }
+
+        id.innerText = "Time: " + hText + mText + sText;
     }, 1000);
 }
 
 function start() {
+    document.getElementById("Start").play();
     document.getElementById("startBtn").remove();
     timer();
     createButtons();
